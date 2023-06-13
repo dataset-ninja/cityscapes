@@ -55,7 +55,6 @@ def check_names():
 def get_settings():
     settings = {
         "project_name": PROJECT_NAME,
-        "project_name_full": PROJECT_NAME_FULL,
         "license": LICENSE,
         "industries": INDUSTRIES,
         "cv_tasks": CV_TASKS,
@@ -68,6 +67,7 @@ def get_settings():
     if any([field is None for field in settings.values()]):
         raise ValueError("Please fill all fields in settings.py after uploading to instance.")
 
+    settings["project_name_full"] = PROJECT_NAME_FULL
     settings["download_original_url"] = DOWNLOAD_ORIGINAL_URL
     settings["class2color"] = CLASS2COLOR
     settings["paper"] = PAPER
