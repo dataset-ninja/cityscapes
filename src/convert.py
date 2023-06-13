@@ -16,7 +16,7 @@ import numpy as np
 # PROJECT_NAME = 'cityscapes'
 IMAGE_EXT = '.png'
 logger = sly.logger
-samplePercent = int(os.environ['modal.state.samplePercent']) / 100
+samplePercent = int(100) / 100
 train_tag = 'train'
 trainval_tag = 'trainval'
 val_tag = 'val'
