@@ -47,7 +47,7 @@ TAGS: List[str] = None
 
 
 def check_names():
-    fields_before_upload = [PROJECT_NAME, PROJECT_NAME_FULL]
+    fields_before_upload = [PROJECT_NAME]
     if any([field is None for field in fields_before_upload]):
         raise ValueError("Please fill all fields in settings.py before uploading to instance.")
 
