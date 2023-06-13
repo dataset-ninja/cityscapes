@@ -5,25 +5,25 @@ from dataset_tools.templates import AnnotationType, CVTask, Industry, License
 ##################################
 # * Before uploading to instance #
 ##################################
-PROJECT_NAME: str = None
+PROJECT_NAME: str = "Cityscapes"
 PROJECT_NAME_FULL: Optional[str] = None
 
 ##################################
 # * After uploading to instance ##
 ##################################
-LICENSE: License = None
-INDUSTRIES: List[Industry] = None
-CV_TASKS: List[CVTask] = None
-ANNOTATION_TYPES: List[AnnotationType] = None
+LICENSE: License = License.Custom(url="https://www.cityscapes-dataset.com/license/")
+INDUSTRIES: List[Industry] = [Industry.GeneralDomain()]
+CV_TASKS: List[CVTask] = [CVTask.InstanceSegmentation(), CVTask.ObjectDetection(), CVTask.SemanticSegmentation()]
+ANNOTATION_TYPES: List[AnnotationType] = [AnnotationType.InstanceSegmentation()]
 
-RELEASE_YEAR: int = None
-HOMEPAGE_URL: str = None
+RELEASE_YEAR: int = 2016
+HOMEPAGE_URL: str = "https://www.cityscapes-dataset.com/"
 # e.g. "https://some.com/dataset/homepage"
 
 PREVIEW_IMAGE_ID: int = None
 # This should be filled AFTER uploading images to instance, just ID of any image.
 
-GITHUB_URL: str = None
+GITHUB_URL: str = "https://github.com/dataset-ninja/cityscapes"
 # URL to GitHub repo on dataset ninja (e.g. "https://github.com/dataset-ninja/some-dataset")
 
 ##################################
@@ -35,10 +35,10 @@ DOWNLOAD_ORIGINAL_URL: Optional[Union[str, dict]] = None
 CLASS2COLOR: Optional[Dict[str, List[str]]] = None
 # If specific colors for classes are needed, fill this dict (e.g. {"class1": [255, 0, 0], "class2": [0, 255, 0]})
 
-PAPER: Optional[str] = None
-CITATION_URL: Optional[str] = None
-ORGANIZATION_NAME: Optional[Union[str, List[str]]] = None
-ORGANIZATION_URL: Optional[Union[str, List[str]]] = None
+PAPER: Optional[str] = "https://arxiv.org/pdf/1604.01685v2.pdf"
+CITATION_URL: Optional[str] = "https://www.cityscapes-dataset.com/citation/"
+ORGANIZATION_NAME: Optional[Union[str, List[str]]] = ["Daimler AG R&D", "Max Planck Institute for Informatics", "TU Darmstadt Visual Inference Group"]
+ORGANIZATION_URL: Optional[Union[str, List[str]]] = ["http://www.mercedes-benz.com/en/mercedes-benz/innovation/autonomous-driving/", "http://www.mpi-inf.mpg.de/departments/computer-vision-and-multimodal-computing/", "http://www.visinf.tu-darmstadt.de/"]
 TAGS: List[str] = None
 
 ##################################
