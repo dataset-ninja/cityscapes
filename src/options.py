@@ -49,7 +49,7 @@ PREVIEWS_IS_DETECTION_TASK: bool = IS_DETECTION_TASK
 ### * Set up visualization params for ClassesPreview class ####
 CLASSES_PREVIEW_ROW_HEIGHT: int = None
 CLASSES_PREVIEW_PADDINGS: dict = {"top": "100px", "bottom": "100px", "left": "100px", "right": "100px"}
-CLASSES_PREVIEW_ROWS: int = 4
+CLASSES_PREVIEW_ROWS: int = 6
 CLASSES_PREVIEW_GAP: int = 5
 # default {"top": "10%", "bottom": "10%", "left": "10%", "right": "10%"}
 # set % or px as string values (e.i. "10%" or "10px")
@@ -60,8 +60,8 @@ CLASSES_PREVIEW_GAP: int = 5
 ### * Set up visualization params for ClassesHeatmaps class ###
 # args for "to_image" method
 DRAW_STYLE: str = None  # "inside_white" or "outside_black"
-HEATMAP_ROWS: int = None
-HEATMAP_COLS: int = None
+HEATMAP_ROWS: int = 8
+HEATMAP_COLS: int = 5
 HEATMAP_GRID_SPACING: int = None
 HEATMAP_OUTER_GRID_SPACING: int = None
 HEATMAP_OUTPUT_WIDTH: int = (
