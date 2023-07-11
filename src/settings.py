@@ -19,7 +19,7 @@ PROJECT_NAME_FULL: Optional[str] = "Cityscapes"
 # * After uploading to instance ##
 ##################################
 LICENSE: License = License.Custom(url="https://www.cityscapes-dataset.com/license/")
-APPLICATIONS: List[Industry, Domain, Research] = [Domain.General()]
+APPLICATIONS: List[Union[Industry, Domain, Research]] = [Domain.General()]
 CV_TASKS: List[CVTask] = [
     CVTask.InstanceSegmentation(),
     CVTask.ObjectDetection(),
