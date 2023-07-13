@@ -189,11 +189,11 @@ def convert_and_upload_supervisely_project(
         #             city_tag = val_tag
 
         # tag_meta = sly.TagMeta(train_val_tag, sly.TagValueType.NONE)
-        tag_meta = sly.TagMeta("city", sly.TagValueType.ANY_STRING)
+        tag_meta = sly.TagMeta(city_tag, sly.TagValueType.NONE)
         if not tag_metas.has_key(tag_meta.name):
             tag_metas = tag_metas.add(tag_meta)
         # tag = sly.Tag(tag_meta)
-        tag = sly.Tag(meta=tag_meta, value=city_tag)
+        tag = sly.Tag(meta=tag_meta)
         json_data = json.load(open(orig_ann_path))
         ann = sly.Annotation.from_img_path(orig_img_path)
         for obj in json_data["objects"]:
@@ -234,7 +234,13 @@ def convert_and_upload_supervisely_project(
     out_meta = sly.ProjectMeta(obj_classes=obj_classes, tag_metas=tag_metas)
     api.project.update_meta(new_project.id, out_meta.to_json())
 
-    for ds_name, ds_id in ds_name_to_id.items():
+    key_to_shift = "train"
+    value_to_shift = ds_name_to_id[key_to_shift]
+
+    shifted_dict = {key_to_shift: value_to_shift}
+    shifted_dict.update(ds_name_to_id)
+
+    for ds_name, ds_id in shifted_dict.items():
         dst_image_infos = api.image.upload_paths(
             ds_id, images_names[ds_name], images_pathes[ds_name]
         )

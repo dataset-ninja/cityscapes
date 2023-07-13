@@ -31,7 +31,7 @@ RELEASE_YEAR: int = 2016
 HOMEPAGE_URL: str = "https://www.cityscapes-dataset.com/"
 # e.g. "https://some.com/dataset/homepage"
 
-PREVIEW_IMAGE_ID: int = 1647450
+PREVIEW_IMAGE_ID: int = 1673790
 # This should be filled AFTER uploading images to instance, just ID of any image.
 
 GITHUB_URL: str = "https://github.com/dataset-ninja/cityscapes"
@@ -94,7 +94,39 @@ ORGANIZATION_URL: Optional[Union[str, List[str]]] = [
     "http://www.mpi-inf.mpg.de/departments/computer-vision-and-multimodal-computing/",
     "http://www.visinf.tu-darmstadt.de/",
 ]
-TAGS: List[str] = None
+
+SLYTAGSPLIT: Dict[str, List[str]] = {
+    "city": [
+        "aachen",
+        "berlin",
+        "bielefeld",
+        "bochum",
+        "bonn",
+        "bremen",
+        "cologne",
+        "darmstadt",
+        "dusseldorf",
+        "erfurt",
+        "frankfurt",
+        "hamburg",
+        "hanover",
+        "jena",
+        "krefeld",
+        "leverkusen",
+        "lindau",
+        "mainz",
+        "monchengladbach",
+        "munich",
+        "munster",
+        "strasbourg",
+        "stuttgart",
+        "tubingen",
+        "ulm",
+        "weimar",
+        "zurich",
+    ]
+}
+TAGS: Optional[List[str]] = None
 
 ##################################
 ###### ? Checks. Do not edit #####
@@ -129,6 +161,7 @@ def get_settings():
     settings["citation_url"] = CITATION_URL
     settings["organization_name"] = ORGANIZATION_NAME
     settings["organization_url"] = ORGANIZATION_URL
-    settings["tags"] = TAGS if TAGS is not None else []
+    settings["slytagsplit"] = SLYTAGSPLIT
+    settings["tags"] = TAGS
 
     return settings
