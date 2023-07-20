@@ -2,6 +2,7 @@ from typing import Dict, List, Optional, Union
 
 from dataset_tools.templates import (
     AnnotationType,
+    Category,
     CVTask,
     Domain,
     Industry,
@@ -20,6 +21,8 @@ PROJECT_NAME_FULL: Optional[str] = "Cityscapes"
 ##################################
 LICENSE: License = License.Custom(url="https://www.cityscapes-dataset.com/license/")
 APPLICATIONS: List[Union[Industry, Domain, Research]] = [Domain.General()]
+CATEGORY: Category = Category.Benchmark()
+
 CV_TASKS: List[CVTask] = [
     CVTask.InstanceSegmentation(),
     CVTask.ObjectDetection(),
@@ -27,7 +30,10 @@ CV_TASKS: List[CVTask] = [
 ]
 ANNOTATION_TYPES: List[AnnotationType] = [AnnotationType.InstanceSegmentation()]
 
-RELEASE_YEAR: int = 2016
+RELEASE_DATE: Optional[str] = "2016-02-20"  # e.g. "YYYY-MM-DD"
+if RELEASE_DATE is None:
+    RELEASE_YEAR: int = None
+
 HOMEPAGE_URL: str = "https://www.cityscapes-dataset.com/"
 # e.g. "https://some.com/dataset/homepage"
 
@@ -84,6 +90,18 @@ CLASS2COLOR: Optional[Dict[str, List[str]]] = {
 
 PAPER: Optional[str] = "https://arxiv.org/pdf/1604.01685v2.pdf"
 CITATION_URL: Optional[str] = "https://www.cityscapes-dataset.com/citation/"
+AUTHORS: Optional[List[str]] = [
+    "M. Cordts",
+    "M. Omran",
+    "S. Ramos",
+    "T. Rehfeld",
+    "M. Enzweiler",
+    "R. Benenson",
+    "U. Franke",
+    "S. Roth",
+    "B. Schiele",
+]
+
 ORGANIZATION_NAME: Optional[Union[str, List[str]]] = [
     "Daimler AG R&D, Germany",
     "Max Planck Institute for Informatics, Germany",
@@ -140,10 +158,14 @@ def check_names():
 
 
 def get_settings():
+    if RELEASE_DATE is not None:
+        RELEASE_YEAR = int(RELEASE_DATE.split("-")[0])
+
     settings = {
         "project_name": PROJECT_NAME,
         "license": LICENSE,
         "applications": APPLICATIONS,
+        "category": CATEGORY,
         "cv_tasks": CV_TASKS,
         "annotation_types": ANNOTATION_TYPES,
         "release_year": RELEASE_YEAR,
@@ -151,14 +173,17 @@ def get_settings():
         "preview_image_id": PREVIEW_IMAGE_ID,
         "github_url": GITHUB_URL,
     }
+
     if any([field is None for field in settings.values()]):
         raise ValueError("Please fill all fields in settings.py after uploading to instance.")
 
-    settings["project_name_full"] = PROJECT_NAME_FULL
+    settings["release_date"] = RELEASE_DATE
+    settings["project_name_full"] = PROJECT_NAME_FULL or PROJECT_NAME
     settings["download_original_url"] = DOWNLOAD_ORIGINAL_URL
     settings["class2color"] = CLASS2COLOR
     settings["paper"] = PAPER
     settings["citation_url"] = CITATION_URL
+    settings["authors"] = AUTHORS
     settings["organization_name"] = ORGANIZATION_NAME
     settings["organization_url"] = ORGANIZATION_URL
     settings["slytagsplit"] = SLYTAGSPLIT
