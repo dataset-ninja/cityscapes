@@ -21,7 +21,7 @@ PROJECT_NAME_FULL: Optional[str] = "Cityscapes"
 ##################################
 LICENSE: License = License.Custom(url="https://www.cityscapes-dataset.com/license/")
 APPLICATIONS: List[Union[Industry, Domain, Research]] = [Domain.General()]
-CATEGORY: Category = Category.Benchmark(extra=Category.SelfDriving())
+CATEGORY: Category = Category.SelfDriving(benchmark=True)
 
 CV_TASKS: List[CVTask] = [
     CVTask.InstanceSegmentation(),
