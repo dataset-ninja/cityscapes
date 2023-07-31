@@ -19,8 +19,10 @@ PROJECT_NAME_FULL: Optional[str] = "Cityscapes"
 ##################################
 # * After uploading to instance ##
 ##################################
-LICENSE: License = License.Custom(url="https://www.cityscapes-dataset.com/license/")
-APPLICATIONS: List[Union[Industry, Domain, Research]] = [Domain.General()]
+LICENSE: License = License.Custom(
+    url="https://www.cityscapes-dataset.com/license/", redistributable=False
+)
+APPLICATIONS: List[Union[Industry, Domain, Research]] = [Industry.Automotive()]
 CATEGORY: Category = Category.SelfDriving(benchmark=True)
 
 CV_TASKS: List[CVTask] = [
@@ -114,7 +116,7 @@ ORGANIZATION_URL: Optional[Union[str, List[str]]] = [
 ]
 
 SLYTAGSPLIT: Dict[str, List[str]] = {
-    "city": [
+    "cities": [
         "aachen",
         "berlin",
         "bielefeld",
