@@ -93,15 +93,15 @@ CLASS2COLOR: Optional[Dict[str, List[str]]] = {
 PAPER: Optional[str] = "https://arxiv.org/pdf/1604.01685v2.pdf"
 CITATION_URL: Optional[str] = "https://www.cityscapes-dataset.com/citation/"
 AUTHORS: Optional[List[str]] = [
-    "M. Cordts",
-    "M. Omran",
-    "S. Ramos",
-    "T. Rehfeld",
-    "M. Enzweiler",
-    "R. Benenson",
-    "U. Franke",
-    "S. Roth",
-    "B. Schiele",
+    "Marius Cordts",
+    "Mohamed Omran",
+    "Sebastian Ramos",
+    "Timo Rehfeld",
+    "Markus Enzweiler",
+    "Rodrigo Benenson",
+    "Uwe Franke",
+    "Stefan Roth",
+    "Bernt Schiele",
 ]
 
 ORGANIZATION_NAME: Optional[Union[str, List[str]]] = [
