@@ -2,7 +2,7 @@
 
 The Cityscapes Dataset is intended for:
 
-1. assessing the performance of vision algorithms for major tasks of semantic urban scene understanding: pixel-level, instance-level, and panoptic semantic labeling;
-2. supporting research that aims to exploit large volumes of (weakly) annotated data, e.g. for training deep neural networks.
+1. Assessing the performance of vision algorithms for major tasks of semantic urban scene understanding: pixel-level, instance-level, and panoptic semantic labeling;
+2. Supporting research that aims to exploit large volumes of (weakly) annotated data, e.g. for training deep neural networks.
 
-Within  **DatasetNinja**, the **Fine Annotations** version of the dataset is offered. It contains 5 000 annotated images with fine annotations. Alternatively, you can download **Coarse Annotations** version with 20000 images on the dataset's [homepage](https://www.cityscapes-dataset.com/).
+Within  **DatasetNinja**, the statistics for the **Fine Annotations** version was collected. Alternatively, you can download **Coarse Annotations** version with 20000 images on the dataset's [homepage](https://www.cityscapes-dataset.com/).
