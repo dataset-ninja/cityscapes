@@ -105,9 +105,9 @@ AUTHORS: Optional[List[str]] = [
 ]
 
 ORGANIZATION_NAME: Optional[Union[str, List[str]]] = [
-    "Daimler AG R&D, Germany",
-    "Max Planck Institute for Informatics, Germany",
-    "TU Darmstadt Visual Inference Group, Germany",
+    "Daimler AG R&D, :de:",
+    "Max Planck Institute for Informatics, :de:",
+    "TU Darmstadt Visual Inference Group, :de:",
 ]
 ORGANIZATION_URL: Optional[Union[str, List[str]]] = [
     "http://www.mercedes-benz.com/en/mercedes-benz/innovation/autonomous-driving/",
