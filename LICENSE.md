@@ -6,4 +6,4 @@ This dataset is made freely available to academic and non-academic entities for 
 4. That you may not use the dataset or any derivative work for commercial purposes as, for example, licensing or selling the data, or using the data with a purpose to procure a commercial gain.
 5. That all rights not expressly granted to you are reserved by us (Daimler AG, MPI Informatics, TU Darmstadt).
 
-[🔗 Source](https://www.cityscapes-dataset.com/license/)
+[Source](https://www.cityscapes-dataset.com/license/)
